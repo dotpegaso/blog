@@ -1,5 +1,5 @@
 backend:
-  name: dotpegaso
+  name: github
   repo: dotpegaso/blog
 
 media_folder: static/assets
