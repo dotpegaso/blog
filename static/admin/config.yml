@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: dotpegaso
+  repo: dotpegaso/blog
 
 media_folder: static/assets
 public_folder: assets
