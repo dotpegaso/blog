@@ -145,7 +145,7 @@ function Dotverse() {
           )}
 
           <br />
-          <LinkButton target="_blank"  href={`https://api.whatsapp.com/send?phone=5513996863522&text=A%20minha%20classe%20de%20n%C3%ADvel%201%20ser%C3%A1%20${finalClass}`}>
+          <LinkButton target="_blank"  href={`https://api.whatsapp.com/send?phone=5513996863522&text=A%20minha%20classe%20no%20DCC%20ser%C3%A1%20${finalClass}`}>
             Compartilha comigo seu resultado
             <Image src={IMAGES.SHARE} />
           </LinkButton >
@@ -272,7 +272,7 @@ function Dotverse() {
             </>
           )}
           <br />
-          <LinkButton target="_blank" href={`https://api.whatsapp.com/send?phone=5513996863522&text=A20%minha%20classe%20de%20n%C3%ADvel%201%20ser%C3%A1%20${finalClass}`}>
+          <LinkButton target="_blank" href={`https://api.whatsapp.com/send?phone=5513996863522&text=A%20minha%20classe%20no%20DCC%20ser%C3%A1%20${finalClass}`}>
             Compartilha comigo seu resultado
             <Image src={IMAGES.SHARE} />
           </LinkButton>
@@ -301,6 +301,10 @@ export const Video = styled.video`
 
   @media screen and (max-width: 490px) {
     width: 100%;
+  }
+
+  &::-internal-media-controls-overlay-cast-button {
+    display: none;
   }
 `
 
@@ -369,7 +373,7 @@ export const Paragraph = styled.p`
   }
 
   @media screen and (max-width: 490px) {
-    font-size: 14px;
+    font-size: 16px;
   }
 `
 
