@@ -301,6 +301,7 @@ export const Video = styled.video`
 
   @media screen and (max-width: 490px) {
     width: 100%;
+    height: 100%;
   }
 
   &::-internal-media-controls-overlay-cast-button {
