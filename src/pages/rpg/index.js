@@ -36,7 +36,7 @@ function Dotverse() {
 
   return (
     <Container>
-      <Video src={require('../../assets/dotverso.mp4')} autoPlay muted disableRemotePlayback />
+      <Video src={require('../../assets/dotverso.mp4')} autoPlay muted disableRemotePlayback playsinline/>
       <Content>
 
         { step === 1 && (
@@ -284,10 +284,22 @@ function Dotverse() {
   )
 }
 
+let bgColor = null;
+const userAgent = navigator.userAgent.toLowerCase(); 
+if (userAgent .indexOf('safari')!=-1){ 
+  if(userAgent .indexOf('chrome')  > -1){
+    bgColor = '#00345f';
+  }else if((userAgent .indexOf('opera')  > -1)||(userAgent .indexOf('opr')  > -1)){
+    bgColor = '#00345f';
+  }else{
+   bgColor = '#114069';
+  }
+}
+
 export const Container = styled.div`
   height: 100vh;
   display: flex;
-  background-color: #00345f;
+  background-color: ${bgColor};
   color: #BBB;
 
   @media screen and (max-width: 490px) {
