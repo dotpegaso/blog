@@ -35,7 +35,7 @@ function Dotverse() {
   }
 
   return (
-    <Container style={{ backgroundColor: window.navigator.userAgent.toLowerCase().indexOf('safari') !== -1 && window.navigator.userAgent.toLowerCase().indexOf('chrome') > -1 ? '#00345f' : '#114069'}}>
+    <Container style={{ backgroundColor: (typeof window !== 'undefined' && window.navigator.userAgent.toLowerCase().indexOf('safari') !== -1 && window.navigator.userAgent.toLowerCase().indexOf('chrome') > -1) ? '#00345f' : '#114069'}}>
       <Video src={require('../../assets/dotverso.mp4')} autoPlay muted disableRemotePlayback playsInline/>
       <Content>
 
