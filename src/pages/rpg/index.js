@@ -36,7 +36,7 @@ function Dotverse() {
 
   return (
     <Container>
-      <Video src={require('../../assets/dotverso.mp4')} autoPlay muted disableRemotePlayback playsinline/>
+      <Video src={require('../../assets/dotverso.mp4')} autoPlay muted disableRemotePlayback playsInline/>
       <Content>
 
         { step === 1 && (
