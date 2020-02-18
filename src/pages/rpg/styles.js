@@ -8,16 +8,28 @@ export const Container = styled.div`
 
   @media screen and (max-width: 490px) {
     flex-wrap: wrap;
+    min-height: 100vh;
+    height: 100%;
   }
 `
 export const Video = styled.video`
   width: 55vw;
+
+  @media screen and (max-width: 490px) {
+    width: 100%;
+  }
 `
 
 export const Content = styled.div`
   width: 45vw;
   padding: 8vw 10vw 0 0;
+  
+  @media screen and (max-width: 490px) {
+    width: 100%;
+    padding: 0 20px;
+  }
 `
+
 export const Button = styled.button`
   background-color: transparent;
   box-shadow: inset 3px 3px 6px rgba(24, 23, 23, 0.4), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
@@ -42,6 +54,15 @@ export const Button = styled.button`
     cursor: pointer;
     color: #FFF; 
   }
+
+  @media screen and (max-width: 490px) {
+    width: 100%;
+    font-size: 14px;
+
+    &:last-child {
+      margin-bottom: 80px;
+    }
+  }
 `
 
 export const Image = styled.img`
@@ -62,12 +83,21 @@ export const Paragraph = styled.p`
     color: #FFF;
     font-weight: 700;
   }
+
+  @media screen and (max-width: 490px) {
+    font-size: 14px;
+  }
 `
 
 export const Title = styled.h2`
   color: #FFF;
   font-family: 'Noto Sans', sans-serif;
+
+  @media screen and (max-width: 490px) {
+    margin-top: 0
+  }
 `
+
 export const Link = styled.a`
   color: #BBB;
   font-family: 'Noto Sans', sans-serif;
@@ -104,5 +134,14 @@ export const LinkButton = styled.a`
     box-shadow: inset 3px 3px 6px rgba(24, 23, 23, 0.4), inset -1px -1px 2px rgba(255, 255, 255, 0.3);
     border-radius: 16px;
     border: none;
+  }
+
+  @media screen and (max-width: 490px) {
+    width: 100%;
+    font-size: 14px;
+
+    &:last-child {
+      margin-bottom: 80px;
+    }
   }
 `

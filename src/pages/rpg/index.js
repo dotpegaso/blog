@@ -145,9 +145,6 @@ function Dotverse() {
           )}
 
           <br />
-          <Paragraph><span>Na sua próxima sessão faremos a ficha juntos, mas já</span></Paragraph>
-          <Paragraph><span>é bacana você saber qual classe será, pra agilizarmos</span></Paragraph>
-          <Paragraph><span>esse processo</span></Paragraph>
           <LinkButton target="_blank"  href={`https://api.whatsapp.com/send?phone=5513996863522&text=A%20minha%20classe%20de%20n%C3%ADvel%201%20ser%C3%A1%20${finalClass}`}>
             Compartilha comigo seu resultado
             <Image src={IMAGES.SHARE} />
@@ -167,7 +164,7 @@ function Dotverse() {
             <Image src={IMAGES.CHEVRON_RIGHT} />
           </Button>
           <Button onClick={() => handleRaceClass('Ladrão/Ladra')}>
-            Buscando a sorte, sempre na espreita
+            Sempre buscando sorte na espreita
             <Image src={IMAGES.CHEVRON_RIGHT} />
           </Button>
           <Button onClick={() => handleRaceClass('Clérigo(a)')}>
@@ -275,9 +272,6 @@ function Dotverse() {
             </>
           )}
           <br />
-          <Paragraph><span>Na sua próxima sessão faremos a ficha juntos, mas já</span></Paragraph>
-          <Paragraph><span>é bacana você saber qual classe será, pra agilizarmos</span></Paragraph>
-          <Paragraph><span>esse processo</span></Paragraph>
           <LinkButton target="_blank" href={`https://api.whatsapp.com/send?phone=5513996863522&text=A20%minha%20classe%20de%20n%C3%ADvel%201%20ser%C3%A1%20${finalClass}`}>
             Compartilha comigo seu resultado
             <Image src={IMAGES.SHARE} />
