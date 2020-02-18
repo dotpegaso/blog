@@ -284,22 +284,10 @@ function Dotverse() {
   )
 }
 
-let bgColor = null;
-const userAgent = navigator.userAgent.toLowerCase(); 
-if (userAgent .indexOf('safari')!=-1){ 
-  if(userAgent .indexOf('chrome')  > -1){
-    bgColor = '#00345f';
-  }else if((userAgent .indexOf('opera')  > -1)||(userAgent .indexOf('opr')  > -1)){
-    bgColor = '#00345f';
-  }else{
-   bgColor = '#114069';
-  }
-}
-
 export const Container = styled.div`
   height: 100vh;
   display: flex;
-  background-color: ${bgColor};
+  background-color: ${navigator.userAgent.toLowerCase().indexOf('safari') !== -1 && navigator.userAgent.toLowerCase().indexOf('chrome') > -1 ? '#00345f' : '#114069'};
   color: #BBB;
 
   @media screen and (max-width: 490px) {
