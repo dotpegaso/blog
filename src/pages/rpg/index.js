@@ -287,7 +287,7 @@ function Dotverse() {
 export const Container = styled.div`
   height: 100vh;
   display: flex;
-  background-color: #00345f;
+  background-color: #0D3E6C;
   color: #BBB;
 
   @media screen and (max-width: 490px) {
