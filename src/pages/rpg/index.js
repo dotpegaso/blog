@@ -32,6 +32,9 @@ function Dotverse() {
     }
 
     updateStep(step + 1)
+    
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 
   return (
@@ -43,15 +46,9 @@ function Dotverse() {
         { step === 1 && (
           <>
             <Title>Olá sobrevivente!</Title>
-            <Paragraph>Não quero ter que fazer você ler um monte de</Paragraph>
-            <Paragraph>regrinha chata de um livro gigante pra decidir</Paragraph>
-            <Paragraph>algo simples: <span>sua classe de nível 1</span></Paragraph>
+            <Paragraph>Não quero ter que fazer você ler um monte de regrinha chata de um livro gigante pra decidir algo simples: <span>sua classe de nível 1</span></Paragraph>
             <br />
-            <Paragraph>Aqui é tech stuff, digital streetwise, tá ligado?</Paragraph>
-            <br />
-            <Paragraph>Então responda algumas perguntas à seguir</Paragraph>
-            <Paragraph>que eu te direi qual classe se encaixa melhor</Paragraph>
-            <Paragraph>no teu tipo de jogo️, tipo buzzfeed</Paragraph>
+            <Paragraph>Então responda algumas perguntas à seguir que eu te direi qual classe se encaixa melhor no teu tipo de jogo️, tipo buzzfeed</Paragraph>
             <Button onClick={() => updateStep(step + 1)}>
               Escolher classe
               <Image src={IMAGES.CHEVRON_RIGHT} />
@@ -62,7 +59,7 @@ function Dotverse() {
 
         { step === 2 && (
           <>
-            <Title>A primeira pergunta é crucial</Title>
+            <Title>Antes de tudo</Title>
             <Paragraph>Seu personagem é humano(a)?</Paragraph>
             <Button onClick={() => updateStep(step + 3)}>
               Sim, é humano(a)
@@ -92,15 +89,11 @@ function Dotverse() {
           <Title>Então tá feito!</Title>
           <Paragraph>Sua classe será definitivamente <span>{raceClass}</span></Paragraph>
           <br />
-          <Paragraph><span>– Oxe, mas desde quando {raceClass} é classe, tá doido?</span></Paragraph>
-          <Paragraph><span>Não serei um(a) Mago(a), Clérigo(a) ou Guerreiro(a)?</span></Paragraph>
+          <Paragraph><span>– Oxe, mas desde quando {raceClass} é classe, tá doido? Não serei um(a) Mago(a), Clérigo(a) ou Guerreiro(a)?</span></Paragraph>
           <br />
-          <Paragraph>Na era de ouro dos RPGs, entre ‘74~'85, elfos, anões e</Paragraph>
-          <Paragraph>halflings evoluíam para classes do mesmo nome,</Paragraph>
-          <Paragraph>ganhando umas habilidades novas e tal</Paragraph>
+          <Paragraph>Na era de ouro dos RPGs, entre ‘74~'85, elfos, anões e halflings evoluíam para classes do mesmo nome, ganhando umas habilidades novas e tal</Paragraph>
           <br />
-          <Paragraph>Clica no botão abaixo pra ver o que você vai conseguir</Paragraph>
-          <Paragraph>fazer agora que tem {raceClass} como classe!</Paragraph>
+          <Paragraph>Clica no botão abaixo pra ver o que você vai conseguir fazer agora que tem {raceClass} como classe!</Paragraph>
           <Button onClick={() => handleRaceClass()}>
             Entenda a classe {raceClass}
             <Image src={IMAGES.CHEVRON_RIGHT} />
@@ -161,7 +154,7 @@ function Dotverse() {
             <Image src={IMAGES.CHEVRON_RIGHT} />
           </Button>
           <Button onClick={() => handleRaceClass('Guerreiro(a)')}>
-            Descendo o braço nos anticristos
+            Descendo o braço em tudo e todos
             <Image src={IMAGES.CHEVRON_RIGHT} />
           </Button>
           <Button onClick={() => handleRaceClass('Ladrão/Ladra')}>
@@ -187,11 +180,11 @@ function Dotverse() {
             <Image src={IMAGES.CHEVRON_RIGHT} />
           </Button>
           <Button onClick={() => handleRaceClass(null, 'Neutro')}>
-            Neutrão
+            Neutro
             <Image src={IMAGES.CHEVRON_RIGHT} />
           </Button>
           <Button onClick={() => handleRaceClass(null, 'Caos')}>
-            Bem filho da puta, do Caos
+            Bem pilantra, do Caos
             <Image src={IMAGES.CHEVRON_RIGHT} />
           </Button>
           </>
@@ -295,6 +288,8 @@ export const Container = styled.div`
     flex-wrap: wrap;
     min-height: 100vh;
     height: 100%;
+    height: 100%;
+    padding-bottom: 100px;
   }
 `
 export const Video = styled.video`
@@ -316,7 +311,7 @@ export const Logo = styled.img`
 
   @media screen and (max-width: 490px) {
     margin: 0 auto;
-    width: 100%;
+    width: 60%;
   }
 `
 
