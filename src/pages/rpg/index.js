@@ -36,7 +36,8 @@ function Dotverse() {
 
   return (
     <Container>
-      <Video src={require('../../assets/dotverso.mp4')} autoPlay muted disableRemotePlayback playsInline/>
+      {/* <Video src={require('../../assets/dotverso.mp4')} autoPlay muted disableRemotePlayback playsInline/> */}
+      <Logo src={IMAGES.DOTVERSO} alt="dotverso logo" />
       <Content>
 
         { step === 1 && (
@@ -306,6 +307,16 @@ export const Video = styled.video`
 
   &::-internal-media-controls-overlay-cast-button {
     display: none;
+  }
+`
+
+export const Logo = styled.img`
+  width: 50%;
+  object-fit: contain;
+
+  @media screen and (max-width: 490px) {
+    margin: 0 auto;
+    width: 100%;
   }
 `
 
