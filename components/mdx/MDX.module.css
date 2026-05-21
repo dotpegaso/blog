@@ -1,16 +1,10 @@
 .anchor {
     color: var(--primary);
-
     text-decoration: none;
-
     padding: 0 20px 2px 0;
-
     background-image: url("/icons/anchor.svg");
-
     background-repeat: no-repeat;
-
     background-position: center right 2.5px;
-
     transition:
         border-color 0.2s ease,
         opacity 0.2s ease;
@@ -32,17 +26,13 @@
 
 .shortCode {
     background: var(--code-background);
-
     border-radius: 6px;
-
     padding: 2px 8px;
-
     font-size: 0.9em;
 }
 
 .emphasis {
     color: var(--contrast);
-
     font-family: var(--bold-font);
 }
 
@@ -61,59 +51,42 @@
 
 .listItem::marker {
     font-family: var(--bold-font);
-
     color: var(--contrast);
 }
 
 .header2 {
     color: var(--primary);
-
     font-size: 3rem;
-
     margin: 80px 0 30px;
-
     line-height: 1.2;
-
     font-family: var(--bold-font);
 }
 
 .header3 {
     color: var(--primary);
-
     font-size: 2.4rem;
-
     margin: 60px 0 20px;
-
     font-family: var(--bold-font);
 }
 
 .blockquote {
     margin: 40px auto;
-
     padding: 20px 24px;
-
     border-left: 4px solid var(--contrast);
-
     opacity: 0.8;
-
     background: var(--highlight);
-
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
 .pre {
     margin: 40px 0 !important;
-
     border-radius: 16px;
-
     overflow-x: auto;
 }
 
 .image {
     width: 100%;
-
     border-radius: 16px;
-
     margin: 40px 0;
 }

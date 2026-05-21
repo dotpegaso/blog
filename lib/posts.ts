@@ -26,11 +26,8 @@ export function getPostSlugs() {
 
 export function getPostBySlug(slug: string, locale: Locale = defaultLocale) {
   const postPath = path.join(POSTS_PATH, slug);
-
   const filePath = path.join(postPath, `${locale}.mdx`);
-
   const source = fs.readFileSync(filePath, "utf8");
-
   const { data, content } = matter(source);
 
   return {

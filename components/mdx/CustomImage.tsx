@@ -1,7 +1,5 @@
 "use client";
-
 import Image from "next/image";
-
 import { usePost } from "@/components/providers/PostContext";
 
 type Props = {
@@ -11,7 +9,6 @@ type Props = {
 
 export default function CustomImage({ src = "", alt = "" }: Props) {
   const { slug } = usePost();
-
   const resolvedSrc = src.startsWith("./")
     ? `/posts/${slug}/${src.replace("./", "")}`
     : src;

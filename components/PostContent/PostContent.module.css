@@ -1,49 +1,35 @@
 .container {
     max-width: 675px;
-
     margin: 60px auto 0;
-
     text-align: center;
 }
 
 .title {
     font-size: 4rem;
-
     line-height: 1.1;
-
     margin: 10px 0 30px;
-
     color: var(--primary);
-
     font-family: var(--bold-font);
 }
 
 .body {
     text-align: left;
-
     margin-top: 50px;
-
     font-size: 1.9rem;
-
     line-height: 1.9;
-
     color: var(--secondary);
 }
 
 .meta {
     color: var(--secondary);
-
     font-size: 1.5rem;
-
     letter-spacing: 0.08em;
-
     text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
     .container {
         width: 100%;
-
         padding: 0 20px;
     }
 }
@@ -52,14 +38,11 @@
     .container {
         margin-top: 40px;
     }
-
     .title {
         font-size: 3rem;
     }
-
     .body {
         font-size: 1.7rem;
-
         line-height: 1.8;
     }
 }

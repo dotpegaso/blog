@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 import styles from "./Preview.module.css";
 
 type Props = {
@@ -14,7 +13,6 @@ export default function Preview({ locale, title, spoiler, slug }: Props) {
     <article className={styles.container}>
       <Link href={`/${locale}/${slug}`} className={styles.link}>
         <h2 className={styles.title}>{title}</h2>
-
         <p className={styles.spoiler}>{spoiler}</p>
       </Link>
     </article>

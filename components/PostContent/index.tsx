@@ -20,9 +20,7 @@ export default function PostContent({
       <div className={styles.meta}>
         {writtenBy} {author} · {readingTime}
       </div>
-
       <h1 className={styles.title}>{title}</h1>
-
       <div className={styles.body}>{children}</div>
     </article>
   );

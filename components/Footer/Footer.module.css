@@ -1,27 +1,20 @@
 .container {
     margin-top: 120px;
-
     padding: 40px 20px 60px;
-
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .socialWrapper {
     width: 250px;
-
     margin: 0 auto 30px;
-
     display: grid;
-
     grid-template-columns: 50px 150px 50px;
-
     align-items: center;
     justify-content: center;
 }
 
 .anchor {
     justify-self: center;
-
     transition:
         opacity 0.2s ease,
         transform 0.2s ease;
@@ -29,21 +22,17 @@
 
 .anchor:hover {
     opacity: 0.7;
-
     transform: translateY(-2px);
 }
 
 .avatar {
     justify-self: center;
-
     border-radius: 999px;
 }
 
 .message {
     font-size: 1.5rem;
-
     text-align: center;
-
     color: var(--secondary);
 }
 

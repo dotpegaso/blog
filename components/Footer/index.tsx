@@ -1,8 +1,14 @@
 import Image from "next/image";
-
 import styles from "./Footer.module.css";
+import { getDictionary } from "@/lib/i18n";
 
-export default function Footer() {
+type Props = {
+  locale: "en" | "pt";
+};
+
+export default function Footer({ locale }: Props) {
+  const dictionary = getDictionary(locale);
+
   return (
     <footer className={styles.container}>
       <div className={styles.socialWrapper}>
@@ -43,9 +49,7 @@ export default function Footer() {
         </a>
       </div>
 
-      <p className={styles.message}>
-        I like to build stuff, this blog is one of them.
-      </p>
+      <p className={styles.message}>{dictionary.footerMessage}</p>
     </footer>
   );
 }

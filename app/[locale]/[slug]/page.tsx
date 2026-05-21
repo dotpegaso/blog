@@ -1,15 +1,12 @@
 import { notFound } from "next/navigation";
-
 import Layout from "@/components/Layout";
 import PostContent from "@/components/PostContent";
 import { PostProvider } from "@/components/providers/PostContext";
-
 import { getPostBySlug } from "@/lib/posts";
 import { parseMDX } from "@/lib/mdx";
 import { getAllPosts } from "@/lib/posts";
 import { generatePostMetadata } from "@/lib/seo";
 import { getDictionary } from "@/lib/i18n";
-
 import type { Metadata } from "next";
 
 type MetadataProps = {
@@ -23,7 +20,6 @@ export async function generateMetadata({
   params,
 }: MetadataProps): Promise<Metadata> {
   const { locale, slug } = await params;
-
   const dictionary = getDictionary(locale);
   const post = getPostBySlug(slug, locale);
 
@@ -51,7 +47,6 @@ export default async function PostPage({ params }: MetadataProps) {
 
   try {
     const post = getPostBySlug(slug, locale);
-
     const { content } = await parseMDX(post.content);
 
     return (

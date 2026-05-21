@@ -1,5 +1,4 @@
 import { getAllPosts } from "@/lib/posts";
-
 import { siteConfig } from "@/lib/site";
 
 export async function GET() {
@@ -10,15 +9,12 @@ export async function GET() {
       (post) => `
         <item>
           <title>${post.frontmatter.title}</title>
-
           <description>
             ${post.frontmatter.spoiler}
           </description>
-
           <link>
             ${siteConfig.url}/${post.locale}/${post.slug}
           </link>
-
           <guid>
             ${siteConfig.url}/${post.locale}/${post.slug}
           </guid>
@@ -33,15 +29,12 @@ export async function GET() {
         <title>
           ${siteConfig.name}
         </title>
-
         <description>
           ${siteConfig.description}
         </description>
-
         <link>
           ${siteConfig.url}
         </link>
-
         ${items}
       </channel>
     </rss>

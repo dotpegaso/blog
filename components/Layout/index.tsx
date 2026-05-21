@@ -12,10 +12,8 @@ export default function Layout({ children, locale }: Props) {
   return (
     <div className={styles.container}>
       <Header locale={locale} />
-
       <main className={styles.children}>{children}</main>
-
-      <Footer />
+      <Footer locale={locale} />
     </div>
   );
 }

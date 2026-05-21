@@ -4,6 +4,7 @@ export const postFrontmatterSchema = z.object({
   title: z.string(),
   spoiler: z.string(),
   author: z.string(),
+  date: z.date(),
   featuredImage: z.string().optional(),
 });
 

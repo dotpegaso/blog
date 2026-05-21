@@ -1,35 +1,27 @@
 @font-face {
     font-family: "HKGrotesk-Regular";
-
+    font-weight: normal;
     src:
         local("HKGrotesk-Regular"),
         url("/fonts/HKGrotesk-Regular.woff2") format("woff2");
-
-    font-weight: normal;
 }
 
 @font-face {
     font-family: "HKGrotesk-Bold";
-
+    font-weight: bold;
     src:
         local("HKGrotesk-Bold"),
         url("/fonts/HKGrotesk-Bold.woff2") format("woff2");
-
-    font-weight: bold;
 }
 
 :root {
     --regular-font: HKGrotesk-Regular, sans-serif;
-
     --bold-font: HKGrotesk-Bold, sans-serif;
-
     --contrast: hsl(307 100% 70%);
     --button-hover: hsl(307 100% 75%);
-
     --background: hsl(240 10% 10%);
     --highlight: hsl(240 8% 14%);
     --code-background: hsl(240 8% 18%);
-
     --primary: hsl(0 0% 95%);
     --secondary: hsl(0 0% 70%);
 }
@@ -51,27 +43,18 @@ body {
 
 body {
     background: var(--highlight);
-
     color: var(--primary);
-
     font-family: var(--regular-font);
-
     text-rendering: optimizeLegibility;
-
     -webkit-font-smoothing: antialiased;
 }
 
 pre {
     overflow-x: auto;
-
     padding: 16px 20px;
-
     border-radius: 12px;
-
     margin: 32px 0;
-
     font-size: 1.5rem;
-
     line-height: 1.6;
 }
 

@@ -1,12 +1,8 @@
 "use client";
-
 import Link from "next/link";
-
 import { usePathname } from "next/navigation";
-
 import Global from "@/components/icons/Global";
 import Wings from "@/components/icons/Wings";
-
 import styles from "./Header.module.css";
 
 type Props = {
@@ -15,13 +11,9 @@ type Props = {
 
 export default function Header({ locale }: Props) {
   const pathname = usePathname();
-
   const nextLocale = locale === "en" ? "pt" : "en";
-
   const segments = pathname.split("/");
-
   segments[1] = nextLocale;
-
   const localizedPath = segments.join("/");
 
   return (
@@ -33,7 +25,6 @@ export default function Header({ locale }: Props) {
 
       <Link href={localizedPath} className={styles.link}>
         <Global fill="var(--primary)" />
-
         {nextLocale}
       </Link>
     </header>
