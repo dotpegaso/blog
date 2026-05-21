@@ -12,7 +12,7 @@ import { getDictionary } from "@/lib/i18n";
 
 import type { Metadata } from "next";
 
-type Props = {
+type MetadataProps = {
   params: Promise<{
     locale: "en" | "pt";
     slug: string;
@@ -41,7 +41,7 @@ export function generateStaticParams() {
   );
 }
 
-export default async function PostPage({ params }: Props) {
+export default async function PostPage({ params }: MetadataProps) {
   const { locale, slug } = await params;
   const dictionary = getDictionary(locale);
 

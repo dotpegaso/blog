@@ -6,6 +6,7 @@ import { getReadingTime } from "./reading-time";
 import { Locale } from "./i18n";
 
 const POSTS_PATH = path.join(process.cwd(), "content/posts");
+const defaultLocale: Locale = "en";
 
 export type Post = {
   slug: string;

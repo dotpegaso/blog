@@ -3,5 +3,5 @@ export const siteConfig = {
 
   description: "Personal blog about frontend, web development and technology.",
 
-  url: "https://dotpegaso.com.br",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
 };

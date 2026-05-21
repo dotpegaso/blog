@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 import Layout from "@/components/Layout";
 import Preview from "@/components/Preview";
 
