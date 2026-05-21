@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
+import Analytics from "@/components/Analytics";
 
 export const metadata: Metadata = {
   title: "dotpegaso",
@@ -15,6 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Analytics />
       <body>{children}</body>
     </html>
   );
