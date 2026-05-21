@@ -1,0 +1,57 @@
+.container {
+    width: 600px;
+
+    margin: 80px auto;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.title {
+    font-size: 3.2rem;
+
+    line-height: 1.15;
+
+    margin: 10px 0 14px;
+
+    transition: 0.2s all ease;
+
+    color: var(--primary);
+
+    font-family: var(--bold-font);
+}
+
+.container:hover .title {
+    color: var(--contrast);
+}
+
+.spoiler {
+    font-size: 1.9rem;
+
+    line-height: 1.7;
+
+    color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 490px) {
+    .container {
+        margin: 60px auto;
+    }
+
+    .title {
+        font-size: 2.7rem;
+    }
+
+    .spoiler {
+        font-size: 1.7rem;
+    }
+}

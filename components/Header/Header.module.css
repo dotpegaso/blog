@@ -1,0 +1,57 @@
+.container {
+    width: fit-content;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-rows: 100px;
+    grid-template-columns: 1fr 1fr;
+
+    grid-column-gap: 50vw;
+
+    justify-content: flex-end;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s all ease;
+
+    font-size: 2.6rem;
+
+    text-decoration: none;
+
+    font-family: var(--bold-font);
+
+    gap: 10px;
+
+    width: 200px;
+
+    color: var(--primary);
+}
+
+.link:hover {
+    color: var(--contrast);
+}
+
+.link svg {
+    flex-shrink: 0;
+}
+
+@media (max-width: 490px) {
+    .container {
+        grid-column-gap: 0;
+        width: 100%;
+        grid-template-rows: 80px;
+        grid-template-columns: 150px 1fr;
+    }
+
+    .link {
+        font-size: 1.8rem;
+        width: 100%;
+        padding: 0 5px;
+        justify-content: flex-start;
+    }
+}
