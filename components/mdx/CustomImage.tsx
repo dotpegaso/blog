@@ -19,6 +19,7 @@ export default function CustomImage({ src = "", alt = "" }: Props) {
       alt={alt}
       width={1200}
       height={700}
+      loading="eager"
       style={{
         width: "100%",
         height: "auto",

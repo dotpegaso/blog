@@ -19,9 +19,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h3: (props) => <h3 {...props} className={styles.header3} />,
     pre: (props) => <pre {...props} className={styles.pre} />,
     img: (props) => (
-      <div className={styles.image}>
+      <span className={styles.image}>
         <CustomImage {...props} />
-      </div>
+      </span>
     ),
     ...components,
   };

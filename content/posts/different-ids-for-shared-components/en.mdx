@@ -1,0 +1,91 @@
+---
+title: Solving non-unique ID error for shared components in React
+date: 2026-05-26
+spoiler: Get rid of that console warning right now
+author: Andre Benatti
+featuredImage: ./social.png
+---
+
+If you go over the [design documents for developers](https://www.chromium.org/developers/design-documents/create-amazing-password-forms) provided by *The Chromium Projects*, you're going to face the following advice under the `Create Amazing Password Forms` section:
+
+> Web browsers are designed with the HTML specification in mind, and going against it can lead to unexpected issues with your web page. This means:
+>
+> Element `id` attributes should be unique: no two elements should have the same `id`.   
+
+But it's way too common to rely on shared components having the same ID across different parts of the application, due to __multiple instances of it being rendered on the same page__.   
+
+The most common one as an example: The *LoginForm* component:
+
+```tsx
+// <LoginForm /> component:
+function LoginForm() => (
+  <form>
+    ...
+    <label htmlFor="username">
+      Username
+    </label>
+    <input
+      id="username"
+      type="text"
+      name="username"
+      placeholder="Username"
+    />
+    ...
+  </form>
+);
+...
+```
+
+```tsx
+// Homepage
+<>
+  <header>
+    <LoginForm /> {/* first instance */}
+  </header>
+  <main>
+  ...
+  </main>
+  <footer>
+    <LoginForm /> {/* second instance */}
+  </footer>
+</>
+```
+
+You can see that both instances of the *LoginForm* component would have the same ID (`username`), which is not allowed according to the HTML specification.
+
+And I know many could think we can solve this issue by passing a unique `id` prop to each instance of the component, but that's not the right approach.
+
+## Behold: __React.useId()__ hook
+
+React provides a `useId` hook that generates a unique ID for each instance of a component.
+
+```tsx
+import { useId } from 'react';
+
+function LoginForm() {
+  const id = useId();
+  const usernameId = `${id}-username`;
+
+  return (
+    <form>
+      <label htmlFor={usernameId}>
+        Username
+      </label>
+      <input
+        id={usernameId}
+        type="text"
+        name="username"
+        placeholder="Username"
+      />
+    </form>
+  );
+}
+```
+
+If you console.log the `id` value, it would look something like this:
+
+![React.useId() example](./example.png)
+
+And that value persists across re-renders, which is also better than passing props or other solutions like __Math.random()__.
+
+See you next time! 👋🏾
