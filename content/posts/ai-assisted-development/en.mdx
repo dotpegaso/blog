@@ -1,0 +1,66 @@
+---
+title: AI-Assisted Development
+date: 2026-07-21
+spoiler: Using AI as an assistant to build a Virtual Tabletop for dice rolling and online tabletop RPG sessions.
+author: Andre Benatti
+featuredImage: ./social.jpg
+---
+
+I'm pretty oldschool when it comes to __tabletop RPGs__. My favorite system is *Dungeons & Dragons B/X (1981)*, and I'm also not a big fan of using miniatures or elaborate accessories. Much of the experience I enjoy providing to the people who play with me revolves around nothing more than [theater of the mind](https://www.reddit.com/r/dndnext/comments/murz4j/what_is_theatre_of_the_mind/), a sheet of paper, and dice rolls.
+
+> 🔰 **This post meant to inspire beginners**  
+> Because of that, I don't intend to dive into
+> agents, harnesses, or different models,
+> just the __basics of Claude__ on its free plan.
+
+So I decided to build a __very simple Virtual Tabletop__ so I could play online with friends who live far away. I started with three main goals:
+
+  1. A canvas that supports images and freehand drawing
+  2. 3D dice for a more immersive experience
+  3. Support for different devices (mobile-friendly)
+
+Then I sketched a few ideas to solidify the *MVP* I wanted, resulting in this:
+
+![MVP Sketch](./example.jpg)
+
+This wasn't the first time I'd attempted this project. Previous attempts were blocked by the challenge of integrating a 3D dice rolling library, and I knew that would be a hurdle again. So this time, I decided to use AI as a development assistant with Claude Code.
+
+## The grill-me skill
+
+I've been following [Matt Pocock's work](https://www.youtube.com/@mattpocockuk) recently and really enjoy the way he shares both his thought process and the results of using AI. His [`grill-me`](https://github.com/mattpocock/skills/blob/733d312884b3878a9a9cff693c5886943753a741/skills/productivity/grill-me/SKILL.md) skill is one of his most well-known creations, so I decided to use it at the beginning of the project to build a __development plan__.
+
+The result was far more interesting than I expected. It asked me *100 questions*, progressively, helping me think through the architecture and major decisions behind the project. Some of the most valuable suggestions were:
+
+  - Guest-first authentication using shareable links (anonymous auth);
+  - A 24-hour lifetime for created rooms, making better use of free database and server plans;
+  - Automatic host transfer when the current host leaves, with automatic ownership restoration when the original host returns;
+  - More realistic participant, drawing, and image limits based on Supabase's free tier;
+  - And several other ideas that helped shape a much more robust MVP.
+
+I also made sure Claude wouldn't act as the project's sole developer. The goal was for it to behave as an assistant—guiding me through the development stages and helping answer implementation questions whenever necessary.
+
+The project was then divided into seven phases:
+
+  1. Supabase setup (schema, RLS, cron jobs, permissions)
+  2. Room creation with guest-first authentication
+  3. Whiteboard implementation using `react-konva`
+  4. Image upload implementation
+  5. Multiplayer presence and host transfer
+  6. Dice rolling
+  7. Limits and TTL-based data cleanup
+
+## Claude's Assistance
+
+Throughout the project, Claude helped me design a much better Supabase schema, define RLS (Row Level Security) policies, and create cron jobs to handle the TTL (Time To Live) of game rooms. I don't have much experience with databases or backend development in general, so this guidance was extremely valuable—not only because it accelerated the implementation, but also because it helped me understand the reasoning behind each decision.
+
+Next, we implemented the whiteboard using [react-konva](https://github.com/konvajs/react-konva), connected drawing events to Supabase RPC (Remote Procedure Call), added image uploads, multiplayer presence, and finally implemented the dice rolling system. This time, integrating the dice library was surprisingly smooth thanks to Claude's guidance, using [@3d-dice/dice-box-threejs](https://github.com/3d-dice/dice-box-threejs).
+
+I wrapped up the project by implementing limits for images, players, and drawings. I also finished the UI using CSS Modules and made a few metadata adjustments for Next.js.
+
+![App Example](./app_example.png)
+
+I was extremely happy with the final result, and I'm excited to test it with friends during our online RPG sessions. It took just three days of spare-time development, and once again it reminded me that AI-assisted development is a great way to accelerate implementation and turn ideas into reality.
+
+So if you have an idea you've been meaning to build in your spare time, I hope this post inspires you to finally get started.
+
+See you next time! 👋🏾
